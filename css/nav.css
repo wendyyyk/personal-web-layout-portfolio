@@ -1,0 +1,194 @@
+
+        @import url('https://fonts.googleapis.com/css2?family=Dosis&family=Mukta:wght@300&display=swap');
+        /* font-family: 'Mukta', sans-serif; 
+            font-family: 'Dosis';
+        */
+        /* 電腦與平板上應用的樣式 */
+        *{
+            box-sizing: border-box;
+        }
+        body {
+            background-color: rgb(237, 237, 237);
+            margin: 0px;
+            font-size: 16px;
+            font-family: 'Mukta', sans-serif;
+        }
+        .header{
+            background-color: rgb(38, 41, 238);
+            display: flex;
+            justify-content: space-between;
+            /* align-items: center; */
+        }
+        .logo{
+            width: 100px;
+            height: 50px;
+            background-color: rgb(219, 219, 12);
+            padding: 10px;
+        }
+        .logo >a{
+            width: 100%;
+            height: 100%;
+            text-decoration: none;
+            color: #fff;
+            font-size: 20px;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .navbar ul{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            /* flex-direction: row;
+            align-items: stretch; */
+        }
+        .navbar ul>li{
+            /* background-color: yellow;
+            padding: 10px;
+            text-align: center; */
+            width: 100px;
+            height: 50px;
+        }
+        .navbar ul>li>a{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 14px;
+            color: rgb(255, 255, 255);
+        }
+        .navbar ul>li>a:hover{
+            background-color: orangered;
+            color: #fff;
+        }
+
+        .menu-icon{
+            display: none;
+            width: 50px;
+            height: 50px;
+            background-color: aquamarine;
+            justify-content: center;
+            align-items: center;
+            color: black;
+        }
+
+        /* About */
+        #About{
+          background-color: #a8a8a8;
+        }
+        .container{
+          width: 80%;
+          margin: auto;
+          display: flex;
+          justify-content: space-between;
+        }
+        .my-photo, .intro{
+          width: 48%;
+          height: 500px;
+          background-color: rgb(167, 167, 167);
+          margin: 40px auto;
+        }
+        /* End About */
+
+        /* Skills */
+        #Skills{
+          background-color: rgb(219, 219, 12);
+        }
+        #Skills .container{
+          gap: 20px;
+        }
+        .skills-list{
+          width: 33.33%;
+          height: 300px;
+          background-color: chocolate;
+          margin: 40px auto;
+        }
+        /* End Skills */
+        /* Photo List */
+        #Gallery{
+          background-color:  rgb(237, 237, 237);
+        }
+        .photo-list{
+          width: 100%;
+          list-style: none;
+          margin: 20px;
+          padding: 0;
+          display: flex;
+          gap: 20px;
+          justify-content: space-between;
+          flex-wrap: wrap;
+        }
+        .photo{
+          width: 30%;
+          height: 300px;
+          background-color: #979797;
+        }
+        .photo:nth-child(even){
+          background-color: rgb(117, 117, 117);
+        }
+
+        /* 手機 */
+        @media screen and (max-width: 500px) {
+        .header{
+            flex-wrap: wrap;
+            align-items: stretch;
+        }
+        .menu-icon{
+            display: block;
+            background-color: rgb(219, 219, 12);
+            padding: 5px;
+            display: flex;
+            color: #fff;
+            font-family: 'Dosis';
+            justify-content: center;
+            align-items: center;
+        }
+        .navbar{
+          width: 100%;
+        }
+        .navbar>ul{
+          flex-direction:column
+          
+        }
+        .navbar>ul>li{
+          width: 100%;
+          display: block;
+          background-color: orangered;
+          padding: 10px;
+          text-align: center;
+          border-bottom: 1px solid #333;
+          flex: 1 1 0%
+        }
+        /* About */
+        .container{
+          flex-direction: column;
+          align-items: center;
+        }
+        .my-photo,.intro{
+          width: 100%;
+          height:300px;
+        }
+        .skills-list{
+          width: 100%;
+        
+        }
+        .photo{
+          width: 46%;
+        }
+        .photo:nth-child(3){
+          order: 2;
+        }
+                .photo:nth-child(4){
+          order: 1;
+        }
+                .photo:nth-child(5){
+          order: 3;
+        }
+                .photo:nth-child(6){
+          order: 4;
+        }
+        }
