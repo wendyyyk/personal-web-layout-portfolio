@@ -10,12 +10,14 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css"
     />
     <link rel="stylesheet" href="css/resume.css" />
+
+    <link rel="icon" href="images/favicon.ico" />
   </head>
   <body>
-    <!-- Header 區塊 -->
+    <!-- Header  -->
     <header class="header">
       <div class="logo"><a href="">Wendy's</a></div>
-      <div class="menu-icon">Menu</div>
+      <div class="menu-icon"><i class="fa-solid fa-bars"></i></div>
       <nav class="navbar">
         <ul>
           <li><a href="">About</a></li>
@@ -25,26 +27,32 @@
         </ul>
       </nav>
     </header>
-    <!-- End header -->
-    <section id="Banner"></section>
+    <!-- About -->
     <section class="About">
       <div class="container">
         <div class="my-photo">
           <img src="images/woman-running-1-01.png" alt="" />
         </div>
         <div class="intro">
-          Hi ! I'm Wendy. <br />
-          A UI/UX designer.
+          Hi ! I'm Wendy. <br />A
+          <span class="rotating-text">
+            <span class="word">UI/UX designer</span>
+            <span class="word">Product designer</span>
+            <span class="word">Educator</span>
+            <span class="word">Marketer</span>
+          </span>
         </div>
       </div>
     </section>
+    <!-- Project -->
     <section id="Project">
       <div class="container">
         <div class="project-card">
           <div class="project-info">
-            <h3>TitleTitleTitleTitle</h3>
+            <h3>LearnFlow <br />A Self-Directed Learning Companion</h3>
             <p class="description">
-              texttexttexttexttexttexttexttexttexttexttext
+              LearnFlow is a mobile app designed to help students turn
+              fragmented learning resources into actionable learning plans.
             </p>
             <div class="read-more">
               <p>Read more</p>
@@ -59,9 +67,11 @@
         </div>
         <div class="project-card">
           <div class="project-info">
-            <h3>TitleTitleTitleTitle</h3>
+            <h3>ClassConnect Redesigning Parent–Teacher Communication</h3>
             <p class="description">
-              texttexttexttexttexttexttexttexttexttexttext
+              ClassConnect is a UX redesign project focused on improving
+              communication between parents and teachers in after-school
+              education.
             </p>
             <div class="read-more">
               <p>Read more</p>
@@ -76,9 +86,10 @@
         </div>
         <div class="project-card">
           <div class="project-info">
-            <h3>TitleTitleTitleTitle</h3>
+            <h3>ThinkLab<br />for Kids Designing Learning Through Play</h3>
             <p class="description">
-              texttexttexttexttexttexttexttexttexttexttext
+              ThinkLab for Kids is an educational platform concept designed for
+              children aged 6–10.
             </p>
             <div class="read-more">
               <p>Read more</p>
@@ -93,6 +104,7 @@
         </div>
       </div>
     </section>
+    <!-- Skills -->
     <section id="Skills">
       <img class="my-photo-2" src="images/woman-02.png" alt="" />
       <div class="skill-box">
@@ -128,20 +140,9 @@
         </ul>
       </div>
     </section>
-    <!-- <section id="Gallery">
-      <div class="container">
-        <ul class="photo-list">
-          <li class="photo">圖片</li>
-          <li class="photo">文字</li>
-          <li class="photo">圖片</li>
-          <li class="photo">文字</li>
-          <li class="photo">圖片</li>
-          <li class="photo">文字</li>
-        </ul>
-      </div>
-    </section> -->
+    <!-- Works -->
     <section id="works">
-      <div class="title">Other Projects</div>
+      <div class="title">More Projects</div>
       <div class="works-container">
         <div class="item"><img src="images/Project01.jpg" alt="" /></div>
         <div class="item"><img src="images/Project02.jpg" alt="" /></div>
@@ -155,19 +156,30 @@
         <!-- <div class="item"><img src="imgs/photo3.jpg" alt="" /></div> -->
       </div>
     </section>
+    <!-- Footer -->
     <footer class="footer">
       <div class="container footer-container">
         <div class="footer-text">
-          <h3>Contact Me!</h3>
+          <h3>Contact Me !</h3>
           <p>期待與您的合作，歡迎透過下方表單聯繫我。</p>
         </div>
-
         <form class="contact-form">
           <div class="form-group">
-            <input type="email" placeholder="Your Email" required />
+            <input
+              type="email"
+              id="email"
+              name="user-email"
+              placeholder="Your Email"
+              required
+            />
           </div>
           <div class="form-group">
-            <textarea placeholder="Your Message" rows="4"></textarea>
+            <textarea
+              id="message"
+              name="user-message"
+              placeholder="Your Message"
+              rows="4"
+            ></textarea>
           </div>
           <button type="submit" class="submit-btn">Send Message</button>
         </form>

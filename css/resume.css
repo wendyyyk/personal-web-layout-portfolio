@@ -1,30 +1,34 @@
 @import url("https://fonts.googleapis.com/css2?family=Gravitas+One&family=Kalam:wght@300;400;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
-/* 電腦與平板上應用的樣式 */
 * {
   box-sizing: border-box;
 }
+/* Reset */
 button {
   border: none;
   background: none;
 }
+/* 全域 */
 body {
   background-color: rgb(237, 237, 237);
   margin: 0px;
   font-size: 16px;
   font-family: "Gravity One";
 }
+
+/* Header */
 .header {
   background-color: rgb(38, 41, 238);
   display: flex;
   justify-content: space-between;
-  /* align-items: center; */
 }
+
 .logo {
   width: 100px;
   height: 50px;
   background-color: rgb(219, 219, 12);
   padding: 10px;
 }
+
 .logo > a {
   width: 100%;
   height: 100%;
@@ -36,21 +40,19 @@ body {
   justify-content: center;
   align-items: center;
 }
+
 .navbar ul {
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
-  /* flex-direction: row;
-            align-items: stretch; */
 }
+
 .navbar ul > li {
-  /* background-color: yellow;
-            padding: 10px;
-            text-align: center; */
   width: 100px;
   height: 50px;
 }
+
 .navbar ul > li > a {
   width: 100%;
   height: 100%;
@@ -61,8 +63,9 @@ body {
   font-size: 14px;
   color: rgb(255, 255, 255);
 }
+
 .navbar ul > li > a:hover {
-  background-color: orangered;
+  background-color: #E6531A;
   color: #fff;
 }
 
@@ -82,16 +85,19 @@ body {
   font-family: "Gravity One";
   text-align: center;
 }
+
 .About {
   background-color: rgb(237, 237, 237);
   padding: 80px 40px;
 }
+
 .container {
   width: 80%;
   margin: auto;
   display: flex;
   justify-content: space-between;
 }
+
 .About .container {
   display: flex;
   flex-wrap: wrap;
@@ -101,22 +107,69 @@ body {
 
 .my-photo {
   flex: 1 1 400px;
+  animation: slidein 1s ease-out;
 }
+
 .my-photo img {
   width: 100%;
   height: auto;
   display: block;
 }
+
+  @keyframes slidein{
+    from{
+      transform: translateX(-50%);
+    }
+    to{
+      transform: translateX(0);
+    }
+  }
+
 .intro {
   flex: 1 1 400px;
   font-size: 5rem;
   font-family: "Gravity One";
   margin: 0;
 }
-/* End About */
+
+.rotating-text {
+  display: inline-block;
+  position: relative;
+  height: 1.15em;
+  vertical-align: bottom;
+  min-width: 600px;
+  overflow: hidden;
+}
+
+.word {
+  position: absolute;
+  opacity: 0;
+  transform: translateY(100%);
+  animation: rotateword 12s infinite;
+}
+
+.word:nth-child(1) { animation-delay: 0s; }
+.word:nth-child(2) { animation-delay: 3s; }
+.word:nth-child(3) { animation-delay: 6s; }
+.word:nth-child(4) { animation-delay: 9s; }
+
+@keyframes rotateword {
+  0%, 25% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  2%, 23% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  25%, 100% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+}
 /* Projects */
 #Project .container {
-  background-color: chocolate;
+  background-color: rgb(226, 113, 48);
   display: flex;
   gap: 20px;
   width: 100%;
@@ -145,13 +198,18 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+  min-width: 400px;
 }
-
+.project-info h3{
+  font-size: 2rem;
+  min-height: 4rem;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
 .description {
   opacity: 0;
   max-height: 0;
   overflow: hidden;
-  transition: all 0.5s ease;
   margin-bottom: auto;
 }
 
@@ -175,6 +233,7 @@ body {
 .project-card:hover .project-image img {
   opacity: 1;
 }
+
 .read-more-btn {
   font-family: "Jost";
   background-color: #ffffff;
@@ -193,10 +252,14 @@ body {
   align-self: flex-end;
   transition: opacity 0.3 ease;
 }
+.read-more p{
+  font-size: 1.5rem;
+}
 .project-card:hover .read-more {
   opacity: 0;
   pointer-events: none;
 }
+
 /* Skills */
 #Skills {
   padding: 80px 0;
@@ -207,7 +270,18 @@ body {
 #Skills img {
   max-width: 500px;
   height: auto;
+  animation: rotate 4s ease-in-out infinite;
 }
+
+@keyframes rotate {
+  0%, 100% {
+    transform: rotate(-5deg); 
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+}
+
 .skill-box {
   display: flex;
   flex-direction: column;
@@ -298,30 +372,8 @@ body {
     width: 60%;
   }
 }
-/* End Skills */
-/* Photo List */
-/* #Gallery {
-  background-color: rgb(237, 237, 237);
-}
-.photo-list {
-  width: 100%;
-  list-style: none;
-  margin: 20px;
-  padding: 0;
-  display: flex;
-  gap: 20px;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-.photo {
-  width: 30%;
-  height: 300px;
-  background-color: #979797;
-}
-.photo:nth-child(even) {
-  background-color: rgb(117, 117, 117);
-} */
-/* works */
+
+/* Works */
 #works {
   width: 80%;
   margin: 100px auto;
@@ -329,6 +381,7 @@ body {
   flex-direction: column;
   gap: 24px;
 }
+
 .item {
   background-color: rgb(158, 230, 26);
   height: 200px;
@@ -336,15 +389,18 @@ body {
   transition: transform 0.3 ease;
   cursor: pointer;
 }
+
 .item:hover {
   transform: scale(1.02);
   z-index: 10;
 }
+
 .item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
+
 .works-container {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -356,22 +412,19 @@ body {
   grid-area: 1/1/3/3;
   height: 410px;
 }
-/* .item:nth-child(1) img {
-        object-fit: fill;
-      } */
-/* .item:nth-child(3) { 
-        height: 205px
-      } */
+
 .item:nth-child(4) {
   grid-area: 1/4/3/6;
   height: 410px;
 }
+
 .footer {
   background-color: rgb(38, 41, 238);
   padding: 40px 0;
   color: white;
   width: 100%;
 }
+
 .footer-container {
   display: flex;
   flex-direction: column;
@@ -381,6 +434,7 @@ body {
   width: 80%;
   margin: auto;
 }
+
 .footer-text {
   flex: 1;
 }
@@ -422,12 +476,14 @@ body {
 .submit-btn:hover {
   background-color: white;
 }
-/* 手機 */
+
+/* 手機版 */
 @media screen and (max-width: 500px) {
   .header {
     flex-wrap: wrap;
     align-items: stretch;
   }
+
   .menu-icon {
     display: block;
     background-color: rgb(219, 219, 12);
@@ -438,51 +494,139 @@ body {
     justify-content: center;
     align-items: center;
   }
+
   .navbar {
     width: 100%;
   }
+
   .navbar > ul {
     flex-direction: column;
   }
+
   .navbar > ul > li {
     width: 100%;
     display: block;
-    background-color: orangered;
+    background-color: #E6531A;
     padding: 10px;
     text-align: center;
     border-bottom: 1px solid #333;
     flex: 1 1 0%;
   }
-  /* About */
-  .container {
+
+  /* About 手機*/
+  .About {
+  padding: 40px 20px;
+}
+  .About .container {
     flex-direction: column;
     align-items: center;
   }
+
   .my-photo,
   .intro {
     width: 100%;
-    height: auto;
-    text-align: center;
-  }
-  .intro{
-    font-size: 2.5rem;
-    padding: 20px 0;
+    min-width: 0;
+    flex: 0 1 auto
   }
 
-  /* Skills */
+  .intro{
+    font-size: 1.8rem;
+    padding: 10px 0;
+    line-height: 1.5;
+    text-align: center;
+  }
+  .rotating-text{
+    min-width: 210px;
+    height: 1.2em;
+    position: relative;
+    top: -5px;
+    display: block;
+  }
+  .word{
+    width: 100%;
+    position: absolute;
+    top: -3px;
+    left: 0;
+    text-align: center;
+  }
+
+  .my-photo img{
+  max-width:250px;
+  margin: 0 auto;
+  }
+
+
+  /* Projects 手機*/
+#Project .container {
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  padding: 2.5rem 1.25rem;
+}
+
+.project-info {
+  width: 100%;
+  min-width: auto;
+  padding: 1.25rem;
+}
+
+.project-info h3{
+  font-size: 1.5rem;
+  max-height: auto;
+}
+
+
+.project-image{
+  order: -1;
+  width: 100%;
+  height: 200px;
+}
+.project-image img {
+
+  opacity: 1;
+}
+
+.project-card {
+  width: 100%;
+  height: auto;
+  flex-direction: column;
+}
+.project-card:hover{
+  flex: 1;
+  background-color: rgb(219, 219, 12);
+}
+
+.description{
+  display: none;
+}
+
+.read-more {
+  position: static;
+  margin-top: 15px;
+  pointer-events: auto;
+}
+.project-card:hover .read-more {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  /* Skills 手機*/
   #Skills{
     flex-direction: column;
     align-items: center;
     gap: 30px;
     padding: 40px 20px;
   }
+
   #Skills img{
     width: 80%;
   }
 
   .skill-bar{
-    width: 100%;
+    width: 10rem;
     max-width: 300px;
+  }
+  .skill-box{
+    align-items: center;
   }
 
   .footer-container {
@@ -502,14 +646,24 @@ body {
 }
 
 .works-container {
-  grid-template-columns: repeat(2, 1fr); /* 手機版變 2 欄 */
+  grid-template-columns: repeat(2, 1fr); 
   grid-template-rows: auto;
+  gap: 10px;
 }
-
+.item{
+  height: 200px;
+}
 .item:nth-child(1), 
 .item:nth-child(4) {
-  grid-area: auto; /* 取消跨行跨列，讓手機版變整齊 */
-  height: 150px;
-  /* object-fit: cover; */
+  grid-area: auto; 
+  height: 200px;
 }
+.item img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.item:last-child:nth-child(odd) {
+    grid-column: span 2;
+  }
 }
