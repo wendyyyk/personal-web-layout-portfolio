@@ -17,8 +17,16 @@
     <!-- Header  -->
     <header class="header">
       <div class="logo"><a href="">Wendy's</a></div>
-      <div class="menu-icon"><i class="fa-solid fa-bars"></i></div>
-      <nav class="navbar">
+      <button
+        class="menu-icon"
+        type="button"
+        aria-label="開啟選單"
+        aria-controls="navbar"
+        aria-expanded="false"
+      >
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <nav class="navbar" id="navbar">
         <ul>
           <li><a href="">About</a></li>
           <li><a href="">Experience</a></li>
@@ -185,5 +193,6 @@
         </form>
       </div>
     </footer>
+    <script src="js/main.js"></script>
   </body>
 </html>

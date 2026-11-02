@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Gravitas+One&family=Kalam:wght@300;400;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@700;800&display=swap");
 * {
   box-sizing: border-box;
 }
@@ -12,7 +12,7 @@ body {
   background-color: rgb(237, 237, 237);
   margin: 0px;
   font-size: 16px;
-  font-family: "Gravity One";
+  font-family: "DM Sans", sans-serif;
 }
 
 /* Header */
@@ -77,12 +77,15 @@ body {
   justify-content: center;
   align-items: center;
   color: black;
+  font-size: 20px;
+  cursor: pointer;
 }
 
 /* About */
 .title {
   font-size: 3rem;
-  font-family: "Gravity One";
+  font-family: "Playfair Display", serif;
+  font-weight: 800;
   text-align: center;
 }
 
@@ -128,7 +131,8 @@ body {
 .intro {
   flex: 1 1 400px;
   font-size: 5rem;
-  font-family: "Gravity One";
+  font-family: "Playfair Display", serif;
+  font-weight: 800;
   margin: 0;
 }
 
@@ -137,7 +141,7 @@ body {
   position: relative;
   height: 1.15em;
   vertical-align: bottom;
-  min-width: 600px;
+  min-width: min(600px, 100%);
   overflow: hidden;
 }
 
@@ -154,7 +158,7 @@ body {
 .word:nth-child(4) { animation-delay: 9s; }
 
 @keyframes rotateword {
-  0%, 25% {
+  0% {
     opacity: 0;
     transform: translateY(100%);
   }
@@ -201,6 +205,7 @@ body {
   min-width: 400px;
 }
 .project-info h3{
+  font-family: "Playfair Display", serif;
   font-size: 2rem;
   min-height: 4rem;
   margin-top: 0;
@@ -218,10 +223,6 @@ body {
   max-height: 200px;
 }
 
-.project img {
-  transition: opacity 0.5s ease;
-}
-
 .project-image img {
   width: 100%;
   height: 100%;
@@ -235,7 +236,6 @@ body {
 }
 
 .read-more-btn {
-  font-family: "Jost";
   background-color: #ffffff;
   border-radius: 100px;
   color: rgb(219, 117, 21);
@@ -250,7 +250,7 @@ body {
   align-items: center;
   gap: 10px;
   align-self: flex-end;
-  transition: opacity 0.3 ease;
+  transition: opacity 0.3s ease;
 }
 .read-more p{
   font-size: 1.5rem;
@@ -262,13 +262,16 @@ body {
 
 /* Skills */
 #Skills {
-  padding: 80px 0;
+  padding: 80px 20px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
   gap: 80px;
 }
 #Skills img {
-  max-width: 500px;
+  width: 500px;
+  max-width: 100%;
   height: auto;
   animation: rotate 4s ease-in-out infinite;
 }
@@ -302,7 +305,7 @@ body {
 .skill-name {
   width: 100px;
   font-size: 20px;
-  font-family: "Gravity One";
+  font-weight: 700;
   margin-right: 15px;
 }
 .skill-bar {
@@ -322,54 +325,26 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   color: aliceblue;
   font-weight: 600;
+  background-color: rgb(38, 41, 238);
+  animation: grow-bar 2s;
 }
 .skill-html {
   width: 90%;
-  background-color: rgb(38, 41, 238);
-  animation-name: ani-html;
-  animation-duration: 2s;
 }
 .skill-css {
   width: 70%;
-  background-color: rgb(38, 41, 238);
-  animation-name: ani-css;
-  animation-duration: 2s;
 }
 .skill-js {
   width: 60%;
-  background-color: rgb(38, 41, 238);
-  animation-name: ani-js;
-  animation-duration: 2s;
 }
 .skill-uiux {
   width: 90%;
-  background-color: rgb(38, 41, 238);
-  animation-name: ani-html;
-  animation-duration: 2s;
 }
 
-@keyframes ani-html {
+/* 只寫 from：動畫會從 0% 長到各自設定的 width */
+@keyframes grow-bar {
   from {
     width: 0%;
-  }
-  to {
-    width: 90%;
-  }
-}
-@keyframes ani-css {
-  from {
-    width: 0%;
-  }
-  to {
-    width: 70%;
-  }
-}
-@keyframes ani-js {
-  from {
-    width: 0%;
-  }
-  to {
-    width: 60%;
   }
 }
 
@@ -386,7 +361,7 @@ body {
   background-color: rgb(158, 230, 26);
   height: 200px;
   overflow: hidden;
-  transition: transform 0.3 ease;
+  transition: transform 0.3s ease;
   cursor: pointer;
 }
 
@@ -429,7 +404,6 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex start;
   gap: 40px;
   width: 80%;
   margin: auto;
@@ -441,7 +415,7 @@ body {
 
 .footer-text h3 {
   font-size: 3rem;
-  font-family: "Gravity One";
+  font-family: "Playfair Display", serif;
   margin-bottom: 20px;
 }
 
@@ -485,18 +459,22 @@ body {
   }
 
   .menu-icon {
-    display: block;
     background-color: rgb(219, 219, 12);
     padding: 5px;
     display: flex;
     color: #fff;
-    font-family: "Dosis";
     justify-content: center;
     align-items: center;
   }
 
+  /* 手機版選單預設收起，JS 加上 .is-open 才顯示 */
   .navbar {
+    display: none;
     width: 100%;
+  }
+
+  .navbar.is-open {
+    display: block;
   }
 
   .navbar > ul {
@@ -572,7 +550,6 @@ body {
 
 .project-info h3{
   font-size: 1.5rem;
-  max-height: auto;
 }
 
 
@@ -642,7 +619,7 @@ body {
 
 .submit-btn {
   align-self: center;
-  width: 100%; /
+  width: 100%;
 }
 
 .works-container {
